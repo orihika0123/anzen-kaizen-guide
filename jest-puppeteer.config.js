@@ -1,5 +1,5 @@
 module.exports = {
-  launch: {
-    headless: false
-  }
+  // launch: {
+  //   headless: false
+  // }
 }
