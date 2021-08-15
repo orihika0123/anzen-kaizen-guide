@@ -3,13 +3,13 @@ module.exports = {
   devtool: "source-map",
   entry: "./js/script.ts",
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".js", ".ts"],
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
-        use: { loader: "ts-loader" }
+        use: { loader: "ts-loader" },
       },
     ],
   },

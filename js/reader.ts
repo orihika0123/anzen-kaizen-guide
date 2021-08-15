@@ -1,5 +1,9 @@
 import $ from "jquery";
 
+/*
+eslint-disable func-names,no-var,vars-on-top,prefer-template
+ */
+
 export const readData = () => {
   const count = $(".todo").length;
   const next = $(".todo input").first();
