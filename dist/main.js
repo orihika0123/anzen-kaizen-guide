@@ -10376,6 +10376,31 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./js/reader.ts":
+/*!**********************!*\
+  !*** ./js/reader.ts ***!
+  \**********************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.readData = void 0;
+var jquery_1 = __importDefault(__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"));
+var readData = function () {
+    var count = jquery_1.default(".todo").length;
+    var next = jquery_1.default(".todo input").first();
+    var nextTodoText = count ? next.val() : "(未登録)";
+    return { count: count, nextTodoText: nextTodoText };
+};
+exports.readData = readData;
+
+
+/***/ }),
+
 /***/ "./js/script.ts":
 /*!**********************!*\
   !*** ./js/script.ts ***!
@@ -10389,13 +10414,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var jquery_1 = __importDefault(__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"));
+var reader_1 = __webpack_require__(/*! ./reader */ "./js/reader.ts");
 /*
 eslint-disable func-names,no-var,vars-on-top,prefer-template
 */
 function updateAll() {
-    var count = jquery_1.default(".todo").length;
-    var next = jquery_1.default(".todo input").first();
-    var nextTodoText = count ? next.val() : "(未登録)";
+    var _a = reader_1.readData(), count = _a.count, nextTodoText = _a.nextTodoText;
     jquery_1.default("#nextTodo").text("次のTODO: " + nextTodoText);
     jquery_1.default("#todoCount").text("(全" + count + "件)");
     if (count) {
