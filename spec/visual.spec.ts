@@ -1,5 +1,5 @@
-const path = require("path");
-const { toMatchImageSnapshot } = require("jest-image-snapshot");
+import path from "path";
+import { toMatchImageSnapshot } from "jest-image-snapshot";
 
 expect.extend({ toMatchImageSnapshot });
 
