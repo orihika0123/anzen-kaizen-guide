@@ -7,10 +7,8 @@ import Vue from "vue"
 import store from "./Store"
 
 export default Vue.extend({
-  computed: {
-    nextTodoText() {
-      return store.todoList.length > 0 ? store.todoList[0].todo : "(未登録)";
-    }
+  props: {
+    nextTodoText: { type: String }
   }
 })
 </script>

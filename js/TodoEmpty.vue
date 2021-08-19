@@ -7,10 +7,8 @@ import Vue from "vue"
 import store from "./Store"
 
 export default Vue.extend({
-  computed: {
-    visible() {
-      return store.todoList.length === 0;
-    }
+  props: {
+    visible: { type: Boolean }
   }
 })
 </script>
