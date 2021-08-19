@@ -1,15 +1,5 @@
 import $ from "jquery";
 
-export const writeNextTodo = (
-  nextTodoText: string | number | string[] | undefined
-) => {
-  $("#nextTodo").text(`次のTODO: ${nextTodoText}`);
-};
-
-export const writeTodoCount = (count: number) => {
-  $("#todoCount").text(`(全${count}件)`);
-};
-
 export const toggleTodoList = (count: number) => {
   if (count) {
     $("#todoList").show();
